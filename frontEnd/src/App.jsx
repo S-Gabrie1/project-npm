@@ -11,12 +11,12 @@ function App() {
     setDark((dark) => !dark);
   }
 
-  console.log(messageToggler.message);
+  console.log(messageToggler().dark);
 
   return (
     <div className={dark ? darkMode(true) : lightMode(true)}>
       <h1>hello world</h1>
-      <h3></h3>
+      <h3>{dark ? messageToggler().dark : messageToggler().light}</h3>
       <button onClick={() => toggleLight()}>
         {dark ? "Light Mode" : "Dark Mode"}
       </button>
